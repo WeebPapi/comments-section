@@ -5,7 +5,7 @@ import { FaRegHeart, FaHeart } from "react-icons/fa6"
 const Comment: React.FC<CommentProps> = ({ fullName, body, likes, image }) => {
   const [liked, setLiked] = useState(false)
   return (
-    <div className="sm:max-w-[500px] max-w-[500px] w-full h-[160px] shadow hover:shadow-xl transition-all duration-500 my-10 flex items-end bg-white rounded-xl">
+    <div className="sm:max-w-[500px] max-w-[500px] w-full min-h-[160px] shadow hover:shadow-xl transition-all duration-500 my-5 flex items-end bg-white rounded-xl">
       <div className="h-full w-[130px] flex flex-col justify-center items-center p-6 gap-2">
         <img
           src={image}
@@ -16,7 +16,7 @@ const Comment: React.FC<CommentProps> = ({ fullName, body, likes, image }) => {
       </div>
       <div className="h-[80%] w-max flex flex-col sm:gap-16 gap-10">
         <div className="w-max">
-          <p>{body}</p>
+          <p className="w-[230px]">{body}</p>
         </div>
         <div className="w-max">
           <div className="w-[70px] flex items-center">

@@ -5,6 +5,8 @@ import { IComment } from "../interfaces/apiInterfaces"
 import Comment from "./Comment"
 import Loading from "./Loading"
 import { CommentsSectionProps } from "../interfaces/componentInterfaces"
+import VirtualizedList from "./VirtualizedList"
+import UnvirtualizedList from "./UnvirtualizedList"
 
 const CommentsSection: React.FC<CommentsSectionProps> = ({
   enableVirtualizer,
@@ -30,17 +32,11 @@ const CommentsSection: React.FC<CommentsSectionProps> = ({
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-[20px] py-4 sm:w-[720px] w-[340px]">Comments</h1>
-      <div className="flex flex-col sm:w-[720px] w-[340px]">
-        {commentsList.map((comment) => (
-          <Comment
-            fullName={comment.user.fullName}
-            likes={comment.likes}
-            body={comment.body}
-            key={comment.postId + comment.id + comment.user.id + Math.random()}
-            image="https://picsum.photos/60"
-          />
-        ))}
-      </div>
+      {enableVirtualizer ? (
+        <VirtualizedList commentsList={commentsList} />
+      ) : (
+        <UnvirtualizedList commentsList={commentsList} />
+      )}
     </div>
   )
 }

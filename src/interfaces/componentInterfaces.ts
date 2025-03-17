@@ -15,3 +15,6 @@ export interface CommentsSectionProps {
 export interface UnvirtualizedListProps {
   commentsList: IComment[]
 }
+export interface VirtualizedListProps {
+  commentsList: IComment[]
+}

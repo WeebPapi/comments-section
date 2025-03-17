@@ -11,6 +11,7 @@ function App() {
       <DummyVideo src={videoSrc} />
       <button
         type="button"
+        className="bg-neutral-200 px-5 py-3 cursor-pointer"
         onClick={() => setEnableVirtualizer((prev) => !prev)}
       >
         Toggle
