@@ -9,12 +9,13 @@ export interface CommentProps {
   likes: number
   image: string
 }
-export interface CommentsSectionProps {
-  enableVirtualizer: boolean
-}
 export interface UnvirtualizedListProps {
   commentsList: IComment[]
 }
 export interface VirtualizedListProps {
   commentsList: IComment[]
+}
+export interface ToggleButtonProps {
+  enableVirtualizer: boolean
+  setEnableVirtualizer: React.Dispatch<React.SetStateAction<boolean>>
 }
